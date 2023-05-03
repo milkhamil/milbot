@@ -112,7 +112,17 @@ function create_response($text, $message)
     switch ($command[0]) {
 
         // jika ada pesan /id, bot akan membalas dengan menyebutkan idnya user
-        case '/id':
+        case '/start':
+        case '/id'.$usernamebot : 
+            $hasil = "Selamat datang $namauser!!!
+            \nAVAILABLE COMMAND
+            \n* /start = menampilkan menu comand bot ini
+            \n* /id = menampilan id kamu
+            \n* /time = menampilkan waktu saat ini";
+            break;
+      
+           // jika ada pesan /id, bot akan membalas dengan menyebutkan idnya user
+      case '/id':
         case '/id'.$usernamebot : //dipakai jika di grup yang haru ditambahkan @usernamebot
             $hasil = "$namauser, ID kamu adalah $fromid";
             break;
@@ -123,15 +133,10 @@ function create_response($text, $message)
             $hasil  = "$namauser, waktu lokal bot sekarang adalah :\n $date";
            // $hasil .= date("d M Y")."\nPukul ".date("H:i:s");
             break;
-        // jika ada pesan /id, bot akan membalas dengan menyebutkan idnya user
-        case '/die':
-        case '/die'.$usernamebot : //dipakai jika di grup yang haru ditambahkan @usernamebot
-            $hasil = die("bot telah dimatikan dari chat telegram master\n");
-            break;
 
         // balasan default jika pesan tidak di definisikan
         default:
-            $hasil = 'Terimakasih, pesan telah kami terima.';
+            $hasil = 'waduh, gw gak ngerti, coba command /start';
             break;
     }
 
