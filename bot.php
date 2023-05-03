@@ -120,6 +120,11 @@ function create_response($text, $message)
             $hasil  = "$namauser, waktu lokal bot sekarang adalah :\n";
             $hasil .= date("d M Y")."\nPukul ".date("H:i:s");
             break;
+        // jika ada pesan /id, bot akan membalas dengan menyebutkan idnya user
+        case '/die':
+        case '/die'.$usernamebot : //dipakai jika di grup yang haru ditambahkan @usernamebot
+            $hasil = die("bot telah dimatikan dari chat telegram master\n");
+            break;
 
         // balasan default jika pesan tidak di definisikan
         default:
@@ -130,6 +135,13 @@ function create_response($text, $message)
     return $hasil;
 }
  
+// jebakan token, klo ga diisi akan mati
+// boleh dihapus jika sudah mengerti
+if (strlen($TOKEN)<20) 
+    die("Token mohon diisi dengan benar!\n");
+
+// fungsi pesan yang sekaligus mengupdate offset 
+// biar tidak berulang-ulang pesan yang di dapat 
 function process_message($message)
 {
     $updateid = $message["update_id"];
@@ -145,10 +157,7 @@ function process_message($message)
     return $updateid;
 }
  
- 
-// hanya untuk metode poll
-// fungsi untuk meminta pesan
-// baca di ebooknya, yakni ada pada proses 1 
+
 function process_one()
 {
     global $debug;
@@ -180,10 +189,13 @@ function process_one()
 // proses berulang-ulang
 // sampai di break secara paksa
 // tekan CTRL+C jika ingin berhenti 
+
+
 while (true) {
     process_one();
     sleep(1);
 }
+
 
 // metode webhook
 // secara normal, hanya bisa digunakan secara bergantian dengan polling
