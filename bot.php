@@ -113,7 +113,7 @@ function create_response($text, $message)
 
         // jika ada pesan /id, bot akan membalas dengan menyebutkan idnya user
         case '/start':
-        case '/id'.$usernamebot : 
+        case '/start'.$usernamebot : 
             $hasil = "Selamat datang $namauser!!!
             \nAVAILABLE COMMAND
             \n* /start = menampilkan menu comand bot ini
