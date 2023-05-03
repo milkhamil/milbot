@@ -1,34 +1,10 @@
 <?php
-
-/*
-BOT PENGANTAR
-Materi EBOOK: Membuat Sendiri Bot Telegram dengan PHP
-Ebook live http://telegram.banghasan.com/
-oleh: bang Hasan HS
-id telegram: @hasanudinhs
-email      : banghasan@gmail.com
-twitter    : @hasanudinhs
-disampaikan pertama kali di: Grup IDT
-dibuat: Juni 2016, Ramadhan 1437 H
-nama file : PertamaBot.php
-change log:
-revisi 1 [15 Juli 2016] :
-+ menambahkan komentar beberapa line
-+ menambahkan kode webhook dalam mode comment
-Pesan: baca dengan teliti, penjelasan ada di baris komentar yang disisipkan.
-Bot tidak akan berjalan, jika tidak diamati coding ini sampai akhir.
-*/
-
-
-date_default_timezone_set('Asia/Kolkata');
-$date = date('h:i:s d-m-y');
-//isikan token dan nama botmu yang di dapat dari bapak bot :
-$TOKEN      = "5849909182:AAE70nGlaNWF-_xTMrLYaGqQ-MSdENTz1gE";
+$TOKEN      = "5849909182:AAE70nGlaNWF-_xTMrLYaGqQ-MSdENTz1gE"; //isikan token dan nama botmu yang di dapat dari bapak bot :
 $usernamebot= "@ESCB4R_bot"; // sesuaikan besar kecilnya, bermanfaat nanti jika bot dimasukkan grup.
 
 
 // aktifkan ini jika perlu debugging
-$debug = true;
+$debug = false;
  
 
 // fungsi untuk mengirim/meminta/memerintahkan sesuatu ke bot 
@@ -112,17 +88,7 @@ function create_response($text, $message)
     switch ($command[0]) {
 
         // jika ada pesan /id, bot akan membalas dengan menyebutkan idnya user
-        case '/start':
-        case '/start'.$usernamebot : 
-            $hasil = "Selamat datang $namauser!!!
-            \nAVAILABLE COMMAND
-            \n* /start = menampilkan menu comand bot ini
-            \n* /id = menampilan id kamu
-            \n* /time = menampilkan waktu saat ini";
-            break;
-      
-           // jika ada pesan /id, bot akan membalas dengan menyebutkan idnya user
-      case '/id':
+        case '/id':
         case '/id'.$usernamebot : //dipakai jika di grup yang haru ditambahkan @usernamebot
             $hasil = "$namauser, ID kamu adalah $fromid";
             break;
@@ -130,23 +96,25 @@ function create_response($text, $message)
         // jika ada permintaan waktu
         case '/time':
         case '/time'.$usernamebot :
-            $hasil  = "$namauser, waktu lokal bot sekarang adalah :\n $date";
-           // $hasil .= date("d M Y")."\nPukul ".date("H:i:s");
+            $hasil  = "$namauser, waktu lokal bot sekarang adalah :\n";
+            $hasil .= date("d M Y")."\nPukul ".date("H:i:s");
+            break;
+		// menu
+        case '/menu':
+        case '/menu'.$usernamebot : //dipakai jika di grup yang haru ditambahkan @usernamebot
+            $hasil = "===MENU LIST===\n
+			# /id (cek user id)\n
+			# /time (cek waktu)";
             break;
 
         // balasan default jika pesan tidak di definisikan
         default:
-            $hasil = 'waduh, gw gak ngerti, coba command /start';
+            $hasil = 'Maaf $namauser saya tidak mengerti, coba command\n /start';
             break;
     }
 
     return $hasil;
 }
- 
-// jebakan token, klo ga diisi akan mati
-// boleh dihapus jika sudah mengerti
-if (strlen($TOKEN)<20) 
-    die("Token mohon diisi dengan benar!\n");
 
 // fungsi pesan yang sekaligus mengupdate offset 
 // biar tidak berulang-ulang pesan yang di dapat 
@@ -164,8 +132,9 @@ function process_message($message)
     }
     return $updateid;
 }
- 
 
+// hanya untuk metode poll
+// fungsi untuk meminta pesan
 function process_one()
 {
     global $debug;
@@ -197,13 +166,10 @@ function process_one()
 // proses berulang-ulang
 // sampai di break secara paksa
 // tekan CTRL+C jika ingin berhenti 
-
-
 while (true) {
     process_one();
     sleep(1);
 }
-
 
 // metode webhook
 // secara normal, hanya bisa digunakan secara bergantian dengan polling
@@ -213,18 +179,14 @@ $entityBody = file_get_contents('php://input');
 $pesanditerima = json_decode($entityBody, true);
 process_message($pesanditerima);
 */
-
-
-
-/*
- * -----------------------
- * Grup @botphp
- * Jika ada pertanyaan jangan via PM
- * langsung ke grup saja.
- * ----------------------
+/* 
+// jebakan token, klo ga diisi akan mati
+// boleh dihapus jika sudah mengerti
+if (strlen($TOKEN)<20) 
+    die("Token mohon diisi dengan benar!\n");
+// hapus baris dibawah ini, jika tidak dihapus berarti kamu kurang teliti!
+die("Mohon diteliti ulang codingnya..\nERROR: Hapus baris atau beri komen line ini yak!\n");
  
-* Just ask, not asks for ask..
-Sekian.
 */
     
 ?>
