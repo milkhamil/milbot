@@ -130,13 +130,6 @@ function create_response($text, $message)
     return $hasil;
 }
  
-// jebakan token, klo ga diisi akan mati
-// boleh dihapus jika sudah mengerti
-if (strlen($TOKEN)<20) 
-    die("Token mohon diisi dengan benar!\n");
-
-// fungsi pesan yang sekaligus mengupdate offset 
-// biar tidak berulang-ulang pesan yang di dapat 
 function process_message($message)
 {
     $updateid = $message["update_id"];
