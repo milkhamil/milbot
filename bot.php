@@ -152,8 +152,6 @@ function process_message($message)
     return $updateid;
 }
  
-// hapus baris dibawah ini, jika tidak dihapus berarti kamu kurang teliti!
-die("Mohon diteliti ulang codingnya..\nERROR: Hapus baris atau beri komen line ini yak!\n");
  
 // hanya untuk metode poll
 // fungsi untuk meminta pesan
