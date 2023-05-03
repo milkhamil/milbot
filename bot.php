@@ -19,6 +19,9 @@ Pesan: baca dengan teliti, penjelasan ada di baris komentar yang disisipkan.
 Bot tidak akan berjalan, jika tidak diamati coding ini sampai akhir.
 */
 
+
+date_default_timezone_set('Asia/Kolkata');
+$date = date('h:i:s d-m-y');
 //isikan token dan nama botmu yang di dapat dari bapak bot :
 $TOKEN      = "5849909182:AAE70nGlaNWF-_xTMrLYaGqQ-MSdENTz1gE";
 $usernamebot= "@ESCB4R_bot"; // sesuaikan besar kecilnya, bermanfaat nanti jika bot dimasukkan grup.
@@ -117,8 +120,8 @@ function create_response($text, $message)
         // jika ada permintaan waktu
         case '/time':
         case '/time'.$usernamebot :
-            $hasil  = "$namauser, waktu lokal bot sekarang adalah :\n";
-            $hasil .= date("d M Y")."\nPukul ".date("H:i:s");
+            $hasil  = "$namauser, waktu lokal bot sekarang adalah :\n $date";
+           // $hasil .= date("d M Y")."\nPukul ".date("H:i:s");
             break;
         // jika ada pesan /id, bot akan membalas dengan menyebutkan idnya user
         case '/die':
