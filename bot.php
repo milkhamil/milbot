@@ -4,7 +4,7 @@ $usernamebot= "@ESCB4R_bot"; // sesuaikan besar kecilnya, bermanfaat nanti jika 
 
 
 // aktifkan ini jika perlu debugging
-$debug = false;
+$debug = true;
  
 
 // fungsi untuk mengirim/meminta/memerintahkan sesuatu ke bot 
