@@ -107,7 +107,7 @@ function create_response($text, $message)
 
         // balasan default jika pesan tidak di definisikan
         default:
-            $hasil = 'Maaf saya tidak mengerti, coba command \n /start';
+            $hasil = 'Maaf saya tidak mengerti, coba command\n /menu';
             break;
     }
 
