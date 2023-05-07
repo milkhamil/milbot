@@ -4,7 +4,7 @@ $usernamebot= "@testerbot1937bot"; // sesuaikan besar kecilnya, bermanfaat nanti
 
 
 // aktifkan ini jika perlu debugging
-$debug = false;
+$debug = true;
  
 
 // fungsi untuk mengirim/meminta/memerintahkan sesuatu ke bot 
@@ -133,6 +133,7 @@ function process_message($message)
     return $updateid;
 }
 
+
 // hanya untuk metode poll
 // fungsi untuk meminta pesan
 function process_one()
@@ -157,9 +158,10 @@ function process_one()
         echo '+';
         $update_id = process_message($message);
     }
-    
+/*    
     // update file id, biar pesan yang diterima tidak berulang
     file_put_contents("last_update_id", $update_id + 1);
+*/
 }
 
 // metode poll
