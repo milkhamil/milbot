@@ -4,7 +4,7 @@ $usernamebot= "@testerbot1937bot"; // sesuaikan besar kecilnya, bermanfaat nanti
 
 
 // aktifkan ini jika perlu debugging
-$debug = false;
+$debug = true;
  
 
 // fungsi untuk mengirim/meminta/memerintahkan sesuatu ke bot 
@@ -35,7 +35,7 @@ function send_reply($chatid, $msgid, $text)
     $data = array(
         'chat_id' => $chatid,
         'text'  => $text,
-        'reply_to_message_id' => $msgid   // <---- biar ada reply nya balasannya, opsional, bisa dihapus baris ini
+        //'reply_to_message_id' => $msgid   // <---- biar ada reply nya balasannya, opsional, bisa dihapus baris ini
     );
     // use key 'http' even if you send the request to https://...
     $options = array(
