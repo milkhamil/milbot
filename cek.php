@@ -101,7 +101,7 @@ function create_response($text, $message)
             break;
 		// menu
         case '/menu':
-            $hasil = "===MENU LIST===
+            $hasil = "=======[ MENU LIST ]=======
 # /menu (menunjukan list menu yang tersedia)
 # /id (cek user id)
 # /time (cek waktu)";
