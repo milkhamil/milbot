@@ -1,10 +1,10 @@
 <?php
-$TOKEN      = "5849909182:AAE70nGlaNWF-_xTMrLYaGqQ-MSdENTz1gE"; //isikan token dan nama botmu yang di dapat dari bapak bot :
-$usernamebot= "@ESCB4R_bot"; // sesuaikan besar kecilnya, bermanfaat nanti jika bot dimasukkan grup.
+$TOKEN      = "6291664857:AAEstgKlJclMivUFxypcLtKIo5NFp0MOWPg"; //isikan token dan nama botmu yang di dapat dari bapak bot :
+$usernamebot= "@testerbot1937bot"; // sesuaikan besar kecilnya, bermanfaat nanti jika bot dimasukkan grup.
 
 
 // aktifkan ini jika perlu debugging
-$debug = true;
+$debug = false;
  
 
 // fungsi untuk mengirim/meminta/memerintahkan sesuatu ke bot 
