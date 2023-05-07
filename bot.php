@@ -141,12 +141,11 @@ function process_one()
     global $debug;
     $update_id  = 0;
     echo "-";
- 
+/*
     if (file_exists("last_update_id")) 
         $update_id = (int)file_get_contents("last_update_id");
  
-    $updates = get_updates($update_id);
-
+    $updates = get_updates($update_id);*/
     // jika debug=0 atau debug=false, pesan ini tidak akan dimunculkan
     if ((!empty($updates)) and ($debug) )  {
         echo "\r\n===== isi diterima \r\n";
@@ -158,10 +157,9 @@ function process_one()
         echo '+';
         $update_id = process_message($message);
     }
-/*    
+  
     // update file id, biar pesan yang diterima tidak berulang
     file_put_contents("last_update_id", $update_id + 1);
-*/
 }
 
 // metode poll
