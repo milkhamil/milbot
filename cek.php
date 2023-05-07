@@ -1,10 +1,16 @@
 <?php
+
+//==================================================================================================================//
+//=========================================== [ BAGIAN TOKEN & UNAME BOT] ===========================================//
+
 $TOKEN      = "6291664857:AAEstgKlJclMivUFxypcLtKIo5NFp0MOWPg"; //isikan token dan nama botmu yang di dapat dari bapak bot :
 $usernamebot= "@testerbot1937bot"; // sesuaikan besar kecilnya, bermanfaat nanti jika bot dimasukkan grup.
 
+//=========================================== [ BAGIAN TOKEN & UNAME BOT] ===========================================//
+//==================================================================================================================//
 
-// aktifkan ini jika perlu debugging
-$debug = true;
+
+$debug = true; // aktifkan ini jika perlu debugging
  
 
 // fungsi untuk mengirim/meminta/memerintahkan sesuatu ke bot 
@@ -69,14 +75,6 @@ function create_response($text, $message)
     isset($message["from"]["username"])
         ? $chatuser = $message["from"]["username"]
         : $chatuser = '';
-    
-
-    // variable penampung nama user
-
-    isset($message["from"]["last_name"]) 
-        ? $namakedua = $message["from"]["last_name"] 
-        : $namakedua = '';   
-    $namauser = $message["from"]["first_name"]. ' ' .$namakedua;
 
     // ini saya pergunakan untuk menghapus kelebihan pesan spasi yang dikirim ke bot.
     $textur = preg_replace('/\s\s+/', ' ', $text); 
@@ -84,24 +82,24 @@ function create_response($text, $message)
     // memecah pesan dalam 2 blok array, kita ambil yang array pertama saja
     $command = explode(' ',$textur,2); //
 
+//==================================================================================================================//
+//============================== vvvvvvvvvv [ BAGIAN COMAND BOT] vvvvvvvvvv ========================================//
+	
    // identifikasi perintah (yakni kata pertama, atau array pertamanya)
     switch ($command[0]) {
 
         // jika ada pesan /id, bot akan membalas dengan menyebutkan idnya user
         case '/id':
-        case '/id'.$usernamebot : //dipakai jika di grup yang haru ditambahkan @usernamebot
             $hasil = "$namauser, ID kamu adalah $fromid";
             break;
         
         // jika ada permintaan waktu
         case '/time':
-        case '/time'.$usernamebot :
             $hasil  = "$namauser, waktu lokal bot sekarang adalah :\n";
             $hasil .= date("d M Y")."\nPukul ".date("H:i:s");
             break;
 		// menu
         case '/menu':
-        case '/menu'.$usernamebot : //dipakai jika di grup yang haru ditambahkan @usernamebot
             $hasil = "===MENU LIST===\n
 			# /id (cek user id)\n
 			# /time (cek waktu)";
@@ -115,6 +113,10 @@ function create_response($text, $message)
 
     return $hasil;
 }
+
+
+//============================== ^^^^^^^^^^ [ BAGIAN COMAND BOT] ^^^^^^^^^^ =========================================//
+//==================================================================================================================//
 
 // fungsi pesan yang sekaligus mengupdate offset 
 // biar tidak berulang-ulang pesan yang di dapat 
