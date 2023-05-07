@@ -51,7 +51,7 @@ function send_reply($chatid, $msgid, $text)
             'content' => http_build_query($data),
         ),
     );
-    $context  = stream_context_create($options)'&parse_mode=HTML';  //coba biar bisa enter
+    $context  = stream_context_create($options)."&parse_mode=HTML";  //coba biar bisa enter
     $result = file_get_contents(request_url('sendMessage'), false, $context);
 
     if ($debug) 
