@@ -102,15 +102,15 @@ function create_response($text, $message)
 		// menu
         case '/menu':
             $hasil = "===MENU LIST===
-			# /menu (menunjukan list menu yang tersedia)
-			# /id (cek user id)
-			# /time (cek waktu)";
+# /menu (menunjukan list menu yang tersedia)
+# /id (cek user id)
+# /time (cek waktu)";
             break;
 
         // balasan default jika pesan tidak di definisikan
         default:
             $hasil = 'Maaf saya tidak mengerti, coba command
-	    /menu';
+/menu';
             break;
     }
 
