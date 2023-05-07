@@ -115,7 +115,7 @@ function create_response($text, $message)
 
     return $hasil;
 }
-/*
+
 // fungsi pesan yang sekaligus mengupdate offset 
 // biar tidak berulang-ulang pesan yang di dapat 
 function process_message($message)
@@ -132,7 +132,6 @@ function process_message($message)
     }
     return $updateid;
 }
-*/
 
 // hanya untuk metode poll
 // fungsi untuk meminta pesan
