@@ -96,18 +96,21 @@ function create_response($text, $message)
         // jika ada permintaan waktu
         case '/time':
             $hasil  = "$namauser, waktu lokal bot sekarang adalah :\n";
-            $hasil .= date("d M Y")."\nPukul ".date("H:i:s");
+            $hasil .= date("d M Y")."\n
+	    Pukul ".date("H:i:s");
             break;
 		// menu
         case '/menu':
             $hasil = "===MENU LIST===\n
+			# /menu (menunjukan list menu yang tersedia)\n
 			# /id (cek user id)\n
 			# /time (cek waktu)";
             break;
 
         // balasan default jika pesan tidak di definisikan
         default:
-            $hasil = 'Maaf saya tidak mengerti, coba command\n /menu';
+            $hasil = 'Maaf saya tidak mengerti, coba command\n
+	    /menu';
             break;
     }
 
