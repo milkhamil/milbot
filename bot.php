@@ -141,11 +141,16 @@ function process_one()
     global $debug;
     $update_id  = 0;
     echo "-";
-/*
     if (file_exists("last_update_id")) 
-        $update_id = (int)file_get_contents("last_update_id");
+       echo "\r\n===== isi diterima \r\n";
+        print_r($updates);
+    }
  
-    $updates = get_updates($update_id);*/
+    foreach ($updates as $message)
+    {
+        echo '+';
+        $update_id = process_message($message);
+    }
     // jika debug=0 atau debug=false, pesan ini tidak akan dimunculkan
     if ((!empty($updates)) and ($debug) )  {
         echo "\r\n===== isi diterima \r\n";
