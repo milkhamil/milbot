@@ -9,9 +9,6 @@ $usernamebot= "@testerbot1937bot"; // sesuaikan besar kecilnya, bermanfaat nanti
 //=========================================== [ BAGIAN TOKEN & UNAME BOT] ===========================================//
 //==================================================================================================================//
 
-date_default_timezone_set('Asia/Jakarta');
-$waktu = date('m/d/Y h:i:s a', time());
-
 $debug = true; // aktifkan ini jika perlu debugging
  
 
@@ -83,32 +80,38 @@ function create_response($text, $message)
 
     // memecah pesan dalam 2 blok array, kita ambil yang array pertama saja
     $command = explode(' ',$textur,2); //
+    $isicommand = explode(' ',$textur); //
 
 //==================================================================================================================//
 //============================== vvvvvvvvvv [ BAGIAN COMAND BOT] vvvvvvvvvv ========================================//
 	
+    switch ($command) {
+	// getno
+        case '/getno':
+            $hasil = "wa.me/62$isicommand";
+            break;
+	
    // identifikasi perintah (yakni kata pertama, atau array pertamanya)
     switch ($command[0]) {
 
-        // jika ada pesan /id, bot akan membalas dengan menyebutkan idnya user
+        
+		    
+	// jika ada pesan /id, bot akan membalas dengan menyebutkan idnya user
         case '/id':
             $hasil = "ID kamu adalah $fromid";
             break;
         
         // jika ada permintaan waktu
-        case '/time':
-            $hasil  = "waktu lokal bot sekarang adalah :\n
-$waktu";
+     	case '/time':
+            $hasil  = "$namauser, waktu lokal bot sekarang adalah :\n";
+            $hasil .= date("d M Y")."\nPukul ".date("H:i:s");
             break;
 		// menu
         case '/menu':
             $hasil = "=======[ MENU LIST ]=======
 # /menu (menunjukan list menu yang tersedia)
 # /id (cek user id)
-# /time (cek waktu)
-
-
-$waktu";
+# /time (cek waktu)";
             break;
 
         // balasan default jika pesan tidak di definisikan
