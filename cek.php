@@ -90,6 +90,7 @@ function create_response($text, $message)
         case '/getno':
             $hasil = "wa.me/62$isicommand";
             break;
+    }
 	
    // identifikasi perintah (yakni kata pertama, atau array pertamanya)
     switch ($command[0]) {
