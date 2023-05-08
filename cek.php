@@ -96,7 +96,7 @@ function create_response($text, $message)
     $rawformat = "0".$caknomer[2].$caknomer[3].$caknomer[4].$caknomer[5].$caknomer[6].$caknomer[7].$caknomer[8].$caknomer[9].$caknomer[10].$caknomer[11].$caknomer[12].$caknomer[13];
     $spasiformat = "0".$caknomer[2].$caknomer[3].$caknomer[4]."+".$caknomer[5].$caknomer[6].$caknomer[7].$caknomer[8]."+".$caknomer[9].$caknomer[10].$caknomer[11].$caknomer[12].$caknomer[13];
     $garisformat = "0".$caknomer[2].$caknomer[3].$caknomer[4]."-".$caknomer[5].$caknomer[6].$caknomer[7].$caknomer[8]."-".$caknomer[9].$caknomer[10].$caknomer[11].$caknomer[12].$caknomer[13];
-    %basicphoga = ("intext%3A%22".$lokalformat."%22+OR+intext%3A%22%2B".$lokalformat."%22+OR+intext%3A%22".$rawformat."%22+OR+intext%3A%22".$spasiformat."%22+OR+intext%3A%22".$garisformat."%22");
+    $infogaphoga = ("intext%3A%22".$lokalformat."%22+OR+intext%3A%22%2B".$lokalformat."%22+OR+intext%3A%22".$rawformat."%22+OR+intext%3A%22".$spasiformat."%22+OR+intext%3A%22".$garisformat."%22");
     $phogageneral1 = ("https://www.google.com/search?q=".$basicphoga);
     $phogageneral2 = ("https://www.google.com/search?q=%28ext%3Adoc+OR+ext%3Adocx+OR+ext%3Aodt+OR+ext%3Apdf+OR+ext%3Artf+OR+ext%3Asxw+OR+ext%3Apsw+OR+ext%3Appt+OR+ext%3Apptx+OR+ext%3Apps+OR+ext%3Acsv+OR+ext%3Atxt+OR+ext%3Axls%29+".$basicphoga);
 
