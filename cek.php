@@ -78,10 +78,13 @@ function create_response($text, $message)
     // ini saya pergunakan untuk menghapus kelebihan pesan spasi yang dikirim ke bot.
     $textur = preg_replace('/\s\s+/', ' ', $text); 
 
-    // memecah pesan dalam 2 blok array, kita ambil yang array pertama saja
+	// memecah pesan dalam beberapa  blok array, kita ambil yang array pertama saja
     $command = explode(' ',$textur); //
     $isinya1 = $command[1]; //
     $isinya2 = $command[2]; //
+    $isinya3 = $command[3]; //
+    $isinya4 = $command[4]; //
+    $isinya5 = $command[5]; //
 
 //==================================================================================================================//
 //============================== vvvvvvvvvv [ BAGIAN COMAND BOT] vvvvvvvvvv ========================================//
@@ -89,11 +92,19 @@ function create_response($text, $message)
 	
    // identifikasi perintah (yakni kata pertama, atau array pertamanya)
     switch ($command[0]) {
+       // get link nomer telpon
         case '/getno':
-            $hasil = "wa.me/$isinya1";
-            $hasil .= "t.me/+$isinya1\n";
-            $hasil .= "wa.me/$isinya2";
-            $hasil .= "t.me/+$isinya2\n";
+            $hasil .= "===== GET LINK NO TELP =====\n";
+            $hasil .= "wa.me/$isinya1\n";
+            $hasil .= "t.me/+$isinya1\n\n";
+            $hasil .= "wa.me/$isinya2\n";
+            $hasil .= "t.me/+$isinya2\n\n";
+            $hasil .= "wa.me/$isinya3\n";
+            $hasil .= "t.me/+$isinya3\n\n";
+            $hasil .= "wa.me/$isinya4\n";
+            $hasil .= "t.me/+$isinya4\n\n";
+            $hasil .= "wa.me/$isinya5\n";
+            $hasil .= "t.me/+$isinya5\n\n";
             break;
 		    
 	// jika ada pesan /id, bot akan membalas dengan menyebutkan idnya user
