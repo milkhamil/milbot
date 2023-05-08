@@ -114,11 +114,11 @@ function create_response($text, $message)
         case '/getinfo':
             $hasil = "===== GET INFO NO TELP =====\n\n";
             $hasil .= "===== SOSIAL MEDIA SEARCH =====\n\n";
-            $hasil .= ("Facebook = ".$phogasites."facebook.com+".$phogageneral1."\n\n") ;
-            $hasil .= ("Instagram = ".$phogasites."instagram.com+".$phogageneral1."\n\n") ;
-            $hasil .= ("Linkedin = ".$phogasites."linkedin.com+".$phogageneral1."\n\n") ;
-            $hasil .= ("Twitter = ".$phogasites."twitter.com+".$phogageneral1."\n\n") ;
-            $hasil .= ("Tiktok = ".$phogasites."tiktok.com+".$phogageneral1."\n\n") ;
+            $hasil .= ("Facebook = ".$phogasites."facebook.com+".$basicphoga."\n\n") ;
+            $hasil .= ("Instagram = ".$phogasites."instagram.com+".$basicphoga."\n\n") ;
+            $hasil .= ("Linkedin = ".$phogasites."linkedin.com+".$basicphoga."\n\n") ;
+            $hasil .= ("Twitter = ".$phogasites."twitter.com+".$basicphoga."\n\n") ;
+            $hasil .= ("Tiktok = ".$phogasites."tiktok.com+".$basicphoga."\n\n") ;
             $hasil .= "===== GENERAL INFO =====\n\n";
             $hasil .= ("General 1 = ".$phogageneral1."\n\n") ;
             $hasil .= ("General 2 = ".$phogageneral2."\n\n") ;
