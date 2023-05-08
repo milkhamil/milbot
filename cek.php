@@ -79,8 +79,9 @@ function create_response($text, $message)
     $textur = preg_replace('/\s\s+/', ' ', $text); 
 
     // memecah pesan dalam 2 blok array, kita ambil yang array pertama saja
-    $command = explode(' ',$textur,2); //
-    $isicommand = $command[1]; //
+    $command = explode(' ',$textur); //
+    $isinya1 = $command[1]; //
+    $isinya2 = $command[2]; //
 
 //==================================================================================================================//
 //============================== vvvvvvvvvv [ BAGIAN COMAND BOT] vvvvvvvvvv ========================================//
@@ -89,7 +90,10 @@ function create_response($text, $message)
    // identifikasi perintah (yakni kata pertama, atau array pertamanya)
     switch ($command[0]) {
         case '/getno':
-            $hasil = "wa.me/$isicommand";
+            $hasil = "wa.me/$isinya1\n
+	    wa.me/$isinya2";
+            $hasil .= "t.me/+$isinya1\n
+	    t.me/+$isinya2";
             break;
 		    
 	// jika ada pesan /id, bot akan membalas dengan menyebutkan idnya user
