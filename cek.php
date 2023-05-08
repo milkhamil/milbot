@@ -99,7 +99,7 @@ function create_response($text, $message)
     $basicphoga = ("intext%3A%22".$lokalformat."%22+OR+intext%3A%22%2B".$lokalformat."%22+OR+intext%3A%22".$rawformat."%22+OR+intext%3A%22".$spasiformat."%22+OR+intext%3A%22".$garisformat."%22");
     $phogageneral1 = ("https://www.google.com/search?q=".$basicphoga);
     $phogageneral2 = ("https://www.google.com/search?q=%28ext%3Adoc+OR+ext%3Adocx+OR+ext%3Aodt+OR+ext%3Apdf+OR+ext%3Artf+OR+ext%3Asxw+OR+ext%3Apsw+OR+ext%3Appt+OR+ext%3Apptx+OR+ext%3Apps+OR+ext%3Acsv+OR+ext%3Atxt+OR+ext%3Axls%29+".$basicphoga);
-    $phogasites = ("https://www.google.com/search?q=site%3A")
+    $phogasites = ("https://www.google.com/search?q=site%3A");
 //================================================== [ INFOGA] ===================================================//
 //==================================================================================================================//
 	
