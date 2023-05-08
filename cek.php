@@ -90,10 +90,10 @@ function create_response($text, $message)
    // identifikasi perintah (yakni kata pertama, atau array pertamanya)
     switch ($command[0]) {
         case '/getno':
-            $hasil = "wa.me/$isinya1\n
-	    wa.me/$isinya2";
-            $hasil .= "t.me/+$isinya1\n
-	    t.me/+$isinya2";
+            $hasil = "wa.me/$isinya1";
+            $hasil .= "t.me/+$isinya1\n";
+            $hasil .= "wa.me/$isinya2";
+            $hasil .= "t.me/+$isinya2\n";
             break;
 		    
 	// jika ada pesan /id, bot akan membalas dengan menyebutkan idnya user
