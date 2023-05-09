@@ -114,9 +114,9 @@ function create_response($text, $message)
 		    
 	case '/scanall':
             $hasil = "===== GET INFO NO TELP =====\n\n";
-            $hasil .= "wa.me/$isinya1\n";
-            $hasil .= "t.me/+$isinya1\n";
-            $hasil .= "https://www.kredibel.com/phone/id/$raw8format\n\n";
+            $hasil .= "WHASTAPP = wa.me/$isinya1\n";
+            $hasil .= "TELEGRAM = t.me/+$isinya1\n";
+            $hasil .= "KREDIBLE = kredibel.com/phone/id/$raw8format\n\n";
             $hasil .= "===== SOSIAL MEDIA SEARCH =====\n\n";
             $hasil .= ("Facebook = ".$phogasites."facebook.com+".$basicphoga."\n\n") ;
             $hasil .= ("Instagram = ".$phogasites."instagram.com+".$basicphoga."\n\n") ;
