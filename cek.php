@@ -63,7 +63,7 @@ function create_response($text, $message)
 {
     global $usernamebot;
     // inisiasi variable hasil yang mana merupakan hasil olahan pesan
-    $hasil = ('',parse_mode = ParseMode.HTML);  
+    $hasil = '';  
 
     $fromid = $message["from"]["id"]; // variable penampung id user
     $chatid = $message["chat"]["id"]; // variable penampung id chat
