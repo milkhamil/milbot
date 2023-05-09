@@ -169,9 +169,11 @@ function create_response($text, $message)
 		// menu
         case '/menu':
             $hasil = "=======[ MENU LIST ]=======
-# /menu (menunjukan list menu yang tersedia)
-# /id (cek user id)
-# /time (cek waktu)";
+# /scanall 628xxxxx (scann nomer yang di input)
+
+# /getno 628xxxxx (buat link dari nomer yang di input maksimal 5)
+
+# /getinfo 628xxxxx (buat link google dork dari nomer yang di input)";
             break;
 
         // balasan default jika pesan tidak di definisikan
