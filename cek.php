@@ -63,7 +63,7 @@ function create_response($text, $message)
 {
     global $usernamebot;
     // inisiasi variable hasil yang mana merupakan hasil olahan pesan
-    $hasil = '';  
+    $hasil = ('',parse_mode = ParseMode.HTML);  
 
     $fromid = $message["from"]["id"]; // variable penampung id user
     $chatid = $message["chat"]["id"]; // variable penampung id chat
@@ -114,7 +114,7 @@ function create_response($text, $message)
 		    
 	case '/tester':
             $hasil .= "===== GENERAL INFO =====\n\n";
-            $hasil .= ("<a href='$phogageneral1'>General 1</a>", parse_mode = ParseMode.HTML) ;
+            $hasil .= ("<a href='$phogageneral1'>General 1</a>") ;
             $hasil .= ("General 1 = ".$phogageneral1."\n\n") ;
             $hasil .= ("General 2 = ".$phogageneral2."\n\n") ;
             break;
