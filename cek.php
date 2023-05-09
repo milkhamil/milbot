@@ -94,6 +94,7 @@ function create_response($text, $message)
     $lokalformat = $input;
     $interformat = "+".$input;
     $rawformat = "0".$caknomer[2].$caknomer[3].$caknomer[4].$caknomer[5].$caknomer[6].$caknomer[7].$caknomer[8].$caknomer[9].$caknomer[10].$caknomer[11].$caknomer[12].$caknomer[13];
+    $raw8format = $caknomer[2].$caknomer[3].$caknomer[4].$caknomer[5].$caknomer[6].$caknomer[7].$caknomer[8].$caknomer[9].$caknomer[10].$caknomer[11].$caknomer[12].$caknomer[13];
     $spasiformat = "0".$caknomer[2].$caknomer[3].$caknomer[4]."+".$caknomer[5].$caknomer[6].$caknomer[7].$caknomer[8]."+".$caknomer[9].$caknomer[10].$caknomer[11].$caknomer[12].$caknomer[13];
     $garisformat = "0".$caknomer[2].$caknomer[3].$caknomer[4]."-".$caknomer[5].$caknomer[6].$caknomer[7].$caknomer[8]."-".$caknomer[9].$caknomer[10].$caknomer[11].$caknomer[12].$caknomer[13];
     $basicphoga = ("intext%3A%22".$lokalformat."%22+OR+intext%3A%22%2B".$lokalformat."%22+OR+intext%3A%22".$rawformat."%22+OR+intext%3A%22".$spasiformat."%22+OR+intext%3A%22".$garisformat."%22");
@@ -110,6 +111,22 @@ function create_response($text, $message)
    // identifikasi perintah (yakni kata pertama, atau array pertamanya)
     switch ($command[0]) {
        // get link nomer telpon
+		    
+	case '/scanall':
+            $hasil = "===== GET INFO NO TELP =====\n\n";
+            $hasil .= "wa.me/$isinya1\n";
+            $hasil .= "t.me/+$isinya1\n";
+            $hasil .= "https://www.kredibel.com/phone/id/$raw8format\n\n";
+            $hasil .= "===== SOSIAL MEDIA SEARCH =====\n\n";
+            $hasil .= ("Facebook = ".$phogasites."facebook.com+".$basicphoga."\n\n") ;
+            $hasil .= ("Instagram = ".$phogasites."instagram.com+".$basicphoga."\n\n") ;
+            $hasil .= ("Linkedin = ".$phogasites."linkedin.com+".$basicphoga."\n\n") ;
+            $hasil .= ("Twitter = ".$phogasites."twitter.com+".$basicphoga."\n\n") ;
+            $hasil .= ("Tiktok = ".$phogasites."tiktok.com+".$basicphoga."\n\n") ;
+            $hasil .= "===== GENERAL INFO =====\n\n";
+            $hasil .= ("General 1 = ".$phogageneral1."\n\n") ;
+            $hasil .= ("General 2 = ".$phogageneral2."\n\n") ;
+            break;
 		  
         case '/getinfo':
             $hasil = "===== GET INFO NO TELP =====\n\n";
