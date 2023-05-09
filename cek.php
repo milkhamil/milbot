@@ -112,6 +112,13 @@ function create_response($text, $message)
     switch ($command[0]) {
        // get link nomer telpon
 		    
+	case '/tester':
+            $hasil .= "===== GENERAL INFO =====\n\n";
+            $hasil .= ("<a href='$phogageneral1'>General 1</a>", parse_mode = ParseMode.HTML) ;
+            $hasil .= ("General 1 = ".$phogageneral1."\n\n") ;
+            $hasil .= ("General 2 = ".$phogageneral2."\n\n") ;
+            break;
+		    
 	case '/scanall':
             $hasil = "===== GET INFO NO TELP =====\n\n";
             $hasil .= "WHASTAPP = wa.me/$isinya1\n";
